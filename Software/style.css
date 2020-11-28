@@ -1,0 +1,139 @@
+*{
+    border: 0px;
+    margin: 0px;
+    color: white;
+}
+
+.boxstyle{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 12px;
+    border: 2px solid white;
+    box-shadow: 20px 5px 20px black;
+}
+
+html{
+    background-image: url(./images/background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 100%;
+    overflow: hidden; 
+    position: fixed;
+    font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: 1px;
+}
+body{
+    display: none;
+}
+
+header{
+    width: 40%;
+    height: 15vh;
+    border: solid rgba(0, 0, 0, 0)  ;
+}
+#headerLine{
+    height: 7vh;
+    margin-top: 4vh;
+    margin-left: -2vw;
+    text-align: right;
+    line-height: 7vh;
+    padding-right: 3vw;
+    font-size: 2em;
+    font-weight: 100;
+}
+header img{
+    position: absolute;
+    left: 4vw;
+    top: 1vw;
+    height: 12vh;
+}
+
+
+main{
+    width: 80vw;
+    height: 80vh;
+    border: solid rgba(0, 0, 0, 0)  ;
+    
+}
+main nav{
+    width: fit-content;
+    height: 3vh;
+    top: -5vh;
+    float: right;
+    position: relative;
+}
+main nav .optionLabel{
+    height: 4vh;
+    line-height: 4vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 20px;
+    float: left;
+
+}
+main #mainContainer{
+   width: 90%;
+   height: 65vh;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 7vh;
+}
+main iframe{
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    height: 59vh;
+}
+
+
+
+
+#back{
+    width: 8vw;
+    height: 5vh;
+    margin-top: 3vh;
+    margin-left: 4vw;
+    line-height: 5vh;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+
+aside{
+    width: 15vw;
+    height: 100vh;
+    position: absolute;
+    top: 0vh;
+    right: 3vw;
+}
+  
+  .container {
+    width: 100%;
+  }
+  
+
+  
+  .scroll-container .box {
+      height: 17.25%;
+      width: 90%;
+      -webkit-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
+      text-align: center;
+      margin-top:2vh;
+    }
+    
+    .scroll-container {
+      width: 100%;
+      height: 100vh;
+      overflow-y: auto;
+      padding-right: 5vw;
+      margin: 0;
+    }
+
+
+  .scroll-container .box.inactive {
+    -webkit-transform: scale(1) !important;
+            transform: scale(1) !important;
+    opacity: 1 !important;
+  }
+  

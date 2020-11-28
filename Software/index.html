@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitrin</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.js"
+        integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <img src="/images/logo.png" alt="">
+        <div class="boxstyle" id="headerLine">
+            KŐBÁNYAI
+            HELYTÖRTÉNETI
+            MÚZEUM
+        </div>
+    </header>
+    <main>
+        <div id="mainContainer" class="boxstyle">
+            <nav>
+                <div class="optionLabel boxstyle">Leírás</div>
+                <div class="optionLabel boxstyle">Képek</div>
+                <div class="optionLabel boxstyle">Termékek</div>
+            </nav>
+            <iframe src="loremipsum.html" frameborder="0"></iframe>
+        </div>
+        <div id="back" class="boxstyle">
+            &#8678; Vissza
+        </div>
+    </main>
+
+
+    <aside>
+        <div class="container">
+            <div class="scroll-container">
+                <div data-index="0" class="box boxstyle">
+                    1
+                </div>
+                <div data-index="1" class="box boxstyle">
+                    2
+                </div>
+                <div data-index="2" class="box boxstyle">
+                    3
+                </div>
+                <div data-index="3" class="box boxstyle">
+                    4
+                </div>
+                <div data-index="4" class="box boxstyle">
+                    5
+                </div>
+                <div data-index="5" class="box boxstyle">
+                    6
+                </div>
+                <div data-index="6" class="box boxstyle">
+                    7
+                </div>
+                <div data-index="7" class="box boxstyle">
+                    8
+                </div>
+                <div data-index="8" class="box boxstyle">
+                    9
+                </div>
+                <div data-index="9" class="box boxstyle">
+                    10
+                </div>
+                <div data-index="10" class="box boxstyle">
+                    11
+                </div>
+                <div data-index="11" class="box boxstyle">
+                    12
+                </div>
+                <div data-index="12" class="box boxstyle">
+                    13
+                </div>
+                <div data-index="13" class="box boxstyle">
+                    14
+                </div>
+                <div data-index="14" class="box boxstyle">
+                    15
+                </div>
+                <div data-index="15" class="box boxstyle">
+                    16
+                </div>
+                <div data-index="16" class="box boxstyle">
+                    16
+                </div>
+                <div data-index="17" class="box boxstyle">
+                    16
+                </div>
+                <div data-index="18" class="box boxstyle">
+                    16
+                </div>
+                <div data-index="19" class="box boxstyle">
+                    16
+                </div>
+                <div data-index="20" class="box boxstyle" style="margin-bottom: 2vh;">
+                    16
+                </div>
+
+
+            </div>
+        </div>
+    </aside>
+
+</body>
+
+</html>
+
+
+
+
+
+<script>
+    let i = 0;
+    function ON() {
+        console.log("OK")
+
+        if (i == 0) {
+            document.getElementById("serverFrame").src = "http://192.168.4.1/RELAY1/ON";
+            console.log("ON");
+            i = 1;
+        } else {
+            document.getElementById("serverFrame").src = "http://192.168.4.1/RELAY1/OFF";
+            console.log("OFF");
+            i = 0;
+        }
+        console.log(i);
+    }
+
+</script>
+<script>
+    $(document).ready(function () {
+        $("body").fadeIn(800);
+    });
+
+
+
+
+    $(function () {
+
+        var scroll = window.requestAnimationFrame ||
+            window.webkitRequestAnimationFrame ||
+            window.mozRequestAnimationFrame ||
+            window.msRequestAnimationFrame ||
+            window.oRequestAnimationFrame ||
+            function (callback) {
+                window.setTimeout(callback, 1000 / 60)
+            }
+
+        var $box = $(".box"),
+            $container = $(".scroll-container");
+
+        var boxHeight = 190.3 + 21.6 //$box.height() + parseInt($box.css("margin-top"));
+
+
+        function update() {
+
+
+            var scrollTop = $container.scrollTop();
+            console.log('Top' + scrollTop);
+
+
+
+            var index = Math.floor(scrollTop / (boxHeight));
+            var indexOfLast = index + 5;
+            var $currentBox = $container.find(".box[data-index='" + index + "']");
+            var indexOfFirst = index - 1;
+            var $lastBox = $container.find(".box[data-index='" + indexOfLast + "']");
+            indexOfLast++;
+            var $nextBox = $container.find(".box[data-index='" + indexOfLast + "']");
+            var $firstBox = $container.find(".box[data-index='" + indexOfFirst + "']");
+            $(".box").not($currentBox).addClass("inactive");
+            $currentBox.removeClass("inactive");
+            $lastBox.removeClass("inactive");
+            $nextBox.removeClass("inactive");
+            $firstBox.removeClass("inactive");
+
+            var sc = scrollTop - index * boxHeight;
+            var scale = 1 - (sc / boxHeight);
+
+            $currentBox.css({
+                "opacity": scale,
+
+            });
+            var scale = (sc / boxHeight);
+            $lastBox.css({
+                "opacity": scale
+            });
+            $nextBox.css({
+                "opacity": 0
+            });
+            $firstBox.css({
+                "opacity": 0
+            });
+
+
+            scroll(update);
+        }
+
+        window.addEventListener('load', update, false);
+
+    });
+</script>
