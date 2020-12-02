@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'PTSansNarrow-Regular';
+    font-style: normal;
+    font-weight: 300;
+    src: local('PTSansNarrow-Regular'), local('PTSansNarrow-Regular'), url("./PTSansNarrow-Regular.ttf") format('truetype');
+  }
+
+  *{
+      font-family: 'PTSansNarrow-Regular';
+  }

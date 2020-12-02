@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v2.2.5-pre b14ce54334a568eaaa107be4c441660a57c3db24
+ * jQuery JavaScript Library v2.2.4
  * http://jquery.com/
  *
  * Includes Sizzle.js
@@ -9,7 +9,7 @@
  * Released under the MIT license
  * http://jquery.org/license
  *
- * Date: 2016-06-22T11:40Z
+ * Date: 2016-05-20T17:23Z
  */
 
 (function( global, factory ) {
@@ -65,7 +65,7 @@ var support = {};
 
 
 var
-	version = "2.2.5-pre b14ce54334a568eaaa107be4c441660a57c3db24",
+	version = "2.2.4",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
